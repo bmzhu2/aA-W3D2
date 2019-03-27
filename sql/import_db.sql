@@ -71,6 +71,10 @@ INSERT INTO
   replies (body, subject_question_id, parent_reply_id, user_id)
 VALUES
   ('Forgot join what''s next? Shit outta luck, okay!', (SELECT id FROM questions WHERE title = 'SQL'), NULL, 
+  (SELECT id FROM users WHERE fname = 'Brian' AND lname = 'Zhu' )),
+  ('It seems that way oof', (SELECT id FROM questions WHERE title = 'SQL'), 1, 
+  (SELECT id FROM users WHERE fname = 'Brian' AND lname = 'Zhu' )),
+  ('Stop replying to yourself', (SELECT id FROM questions WHERE title = 'SQL'), 2, 
   (SELECT id FROM users WHERE fname = 'Brian' AND lname = 'Zhu' ));
 
 
